@@ -1,40 +1,51 @@
-.card-container {
-  max-width: 600px;
-  margin: 50px auto;
-  padding: 20px;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 7px 10px 10px rgb(0 0 0 / 34%);
-  background-color: #AD88C6;
+body {
+  font-family: 'Arial', sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #f0f0f0;
 }
 
-h1{
+h1, h2 {
   text-align: center;
-  color: #211C6A;
+}
+
+.card-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #AD88C6;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .expense-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
 }
 
 .expense-container input {
-  padding: 8px;
+  flex: 1 1 45%;
+  padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #F8EDFF;
-  color: #7469B6;
-  outline: none;
+  border-radius: 4px;
 }
 
 .expense-container button {
-  padding: 8px 15px;
-  border: none;
-  border-radius: 5px;
+  flex: 1 1 100%;
+  padding: 10px;
   background-color: #7469B6;
   color: white;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.expense-container button:hover {
+  background-color: #5e539b;
 }
 
 ul {
@@ -43,54 +54,58 @@ ul {
 }
 
 ul li {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 0;
-  color: #211C6A;
 }
 
-ul li .btn{
-  padding: 8px 15px;
-  border: none;
-  border-radius: 5px;
+ul li .btn {
   background-color: #7469B6;
   color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+ul li .btn:hover {
+  background-color: #574b99;
 }
 
 .balance-container {
   margin-top: 20px;
-  border-top: 1px solid #ccc;
-  padding-top: 20px;
-}
-
-.balance-container h2 {
-  margin-bottom: 10px;
-  font-size: 1.2em;
-  color: #211C6A;
+  text-align: center;
 }
 
 .balance-container input {
-  margin-right: 10px;
-  padding: 8px;
-  border: none;
-  background-color: #F8EDFF;
-  border-radius: 5px;
-  color: #7469B6;
-  outline: none;
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 10px;
 }
 
-.balance-container button {
-  padding: 8px 15px;
-  border: none;
-  border-radius: 5px;
-  background-color: #7469B6;
-  color: white;
-  cursor: pointer;
-}
+@media (max-width: 600px) {
+  .card-container {
+    padding: 15px;
+  }
 
-.balance-container h3 {
-  margin-top: 15px;
-  font-size: 1.1em;
+  .expense-container input, .expense-container button {
+    flex: 1 1 100%; 
+  }
+
+  ul li {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  ul li .btn {
+    margin-top: 10px;
+  }
 }
